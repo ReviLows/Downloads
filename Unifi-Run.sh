@@ -1,10 +1,3 @@
-if dpkg -l | grep "unifi " | grep -q "^ii"; then
-  inform_port=$(grep "^unifi.http.port" /usr/lib/unifi/data/system.properties | cut -d'=' -f2 | tail -n1)
-  dashboard_port=$(grep "^unifi.https.port" /usr/lib/unifi/data/system.properties | cut -d'=' -f2 | tail -n1)
-  clear
-  header
-  echo ""
-  echo -e "${GREEN}#${RESET} UniFi Network Controller 5.12.35 has been installed successfully"
   if [[ "${remote_controller}" = 'true' ]]; then
     echo -e "${GREEN}#${RESET} Your controller address: ${WHITE_R}https://$PUBLIC_SERVER_IP:${dash_port}${RESET}"
     if [[ "${le_script}" == 'true' ]]; then
